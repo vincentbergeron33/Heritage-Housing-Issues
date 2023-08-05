@@ -18,3 +18,4 @@ MarkupSafe
 protobuf
 ipywidgets
 altair
+ydata-profiling
