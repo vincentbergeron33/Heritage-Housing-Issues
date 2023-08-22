@@ -1,57 +1,11 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Codeanywhere Template Instructions
+# Heriting Housing Issues
 
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Codeanywhere Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Codeanywhere Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**The goal of this project is to optimize the sales price precision of inherited properties which the client wants to sell.**
 
 ## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -80,8 +34,12 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-
-
+* **Project Terms & Jargon**
+    * Database is all the data that has been gathered by the client which include the features and the target.
+	* features are all the variable above except the SalePrice. They are use to predict the Target which is SalePrice.
+	* Target is SalePrice. The target is the variable we want to predict by using the features.
+    * Best features are the feature which explain in the high percentage the database.
+	* R2 is the score a Machine Learning Regressir pipeline gets by predicting the target from the features. R2 is between 0 and 1, the close to 1, the more precised if is the ML pipeline.
 
 
 ## Business Requirements
@@ -94,20 +52,71 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+* 1 - We suspect that the overall quality will have an important impact on the Sale Price. Better is the overall quality, the higher should the Sale Price be.
+	* A Correlation study can help in this investigation
+* 2 - We suspect that the overall condition will have an important impact on the Sale Price. Better is the overall condition, the higher should the Sale Price be.
+	* A Correlation study can help in this investigation
+* 3 - We suspect that the Remodel date will have an important impact on the Sale Price. The latest is has been remodel or built, the higher should the Sale Price be.
+    * A Correlation study can help in this investigation
+
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+
+* **Business Requirement 1:** Data Visualization and Correlation study
+	* We will inspect the data related to the Sale Price.
+	* We will conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to the Sale Price.
+	* We will plot the main variables against the SalePrice to visualize insights.
+
+* **Business Requirement 2:** Regressor Machine Learning Model
+	* We want to predict the Sale Price.
+    * To predict Sale Price, we want to use a Regressor Machine learning Model or change the ML task to classification if the regressor model doesn't achiebe the minimum R2 score.
+    * We want to achieve achieve a minimum R2 score of 0.75 on both Train and Test sets.
+    * We want to understand the most important features.
+	* We want to predict the tenure level for a prospect that is expected to churn. We want to build a regression model or change the ML task to classification depending on the regressor performance.
 
 
 ## ML Business Case
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Predict SalePrice
+Regression Model
+We want an ML model to predict the Saleprice of a 4 houses in Ames and Iowa. The target variable is a integer. We consider a regression model, which is supervised.
+Our goal is to predict the houses Saleprice as accurate as possible. The ML model is considered a failure if the R2 score is less the 0.75 for both Train and Test sets.
+The training data to fit the model comes from Kaggle. The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Quick project summary
+* Quick project summary
+	* Project Terms & Jargon
+	* Describe Project Dataset
+	* State Business Requirements
+
+### Page 2: Sale Price Study
+* Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
+* After data analysis, we agreed with stakeholders that the page will: 
+	* State business requirement 1
+	* Checkbox: data inspection on customer base (display the number of rows and columns in the data, and display the first ten rows of the data)
+	* Display the most correlated variables to churn and the conclusions
+	* Checkbox: Individual plots showing the churn levels for each correlated variable 
+	* Checkbox: Parallel plot using Churn and correlated variables 
+
+### Page 3: Prospect Churnometer
+* State business requirement 2
+* Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict prospect Churn, Tenure and Cluster.
+* "Run predictive analysis" button that serves the prospect data to our ML pipelines, and predicts if the prospect will churn or not, if so, when. It also shows to which cluster the prospect belongs and the cluster's profile. For the churn and tenure predictions, the page will inform the associated probability for churning and tenure level.
+
+### Page 4: Project Hypothesis and Validation
+* Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
+* 1 - We suspect customers are churning with low tenure levels
+	* Correct. The correlation study at Churned Customer Study supports that.
+* 2 -  A customer survey showed our customers appreciate fibre Optic.
+	* A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
+
+### Page 5: Predict Churn
+* Considerations and conclusions after the pipeline is trained
+* Present ML pipeline steps
+* Feature importance
+* Pipeline performance
 
 
 
