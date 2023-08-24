@@ -95,15 +95,15 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 * Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
 * After data analysis, we agreed with stakeholders that the page will: 
 	* State business requirement 1
-	* Checkbox: data inspection on customer base (display the number of rows and columns in the data, and display the first ten rows of the data)
-	* Display the most correlated variables to churn and the conclusions
-	* Checkbox: Individual plots showing the churn levels for each correlated variable 
-	* Checkbox: Parallel plot using Churn and correlated variables 
+	* Checkbox: data inspection (display the number of rows and columns in the data, and display the first ten rows of the data)
+	* Display the most correlated variables to Sale Price and the conclusions.
+	* Checkbox: Individual plots showing the correlation between Sale Price and the numerical variables. 
+	* Checkbox: Parallel plot showing the correlation between Sale Price and the categorical variables. 
 
-### Page 3: Prospect Churnometer
+### Page 3: Predict Sale Price
 * State business requirement 2
-* Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict prospect Churn, Tenure and Cluster.
-* "Run predictive analysis" button that serves the prospect data to our ML pipelines, and predicts if the prospect will churn or not, if so, when. It also shows to which cluster the prospect belongs and the cluster's profile. For the churn and tenure predictions, the page will inform the associated probability for churning and tenure level.
+* Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict the Sale Price.
+* "Run predictive analysis" button that serves the prospect data to our ML pipelines, and predicts the prospect Sale Price.
 
 ### Page 4: Project Hypothesis and Validation
 * Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
@@ -111,6 +111,12 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 	* Correct. The correlation study at Churned Customer Study supports that.
 * 2 -  A customer survey showed our customers appreciate fibre Optic.
 	* A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
+* 1 - We suspect that the overall quality will have an important impact on the Sale Price. Better is the overall quality, the higher should the Sale Price be.
+	* Correct. The correlation study shows that Overall quality is one of most correlated feature with the target Sale Price. The modeling and evalation shows that Overall quality is the most important feature to predict the Sale Price.
+* 2 - We suspect that the overall condition will have an important impact on the Sale Price. Better is the overall condition, the higher should the Sale Price be.
+	* Incorrect. The correlation study shows that the Overall condition is not one of the most correlated feature and the modeling and evaluation shows that it is not on of the best features to predict the Sale Price.
+* 3 - We suspect that the Remodel date will have an important impact on the Sale Price. The latest is has been remodel or built, the higher should the Sale Price be.
+    * Correct. The correlation study shows that the Remodel date is one of most correlated feature with the target Sale Price. The modeling and evalation shows that Remodel date is one of the best features to predict the Sale Price.
 
 ### Page 5: Predict Churn
 * Considerations and conclusions after the pipeline is trained
