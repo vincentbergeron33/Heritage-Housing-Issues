@@ -38,14 +38,14 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housin
     * Database is all the data that has been gathered by the client which include the features and the target.
 	* features are all the variable above except the SalePrice. They are use to predict the Target which is SalePrice.
 	* Target is SalePrice. The target is the variable we want to predict by using the features.
-    * Best features are the feature which explain in the high percentage the database.
-	* R2 is the score a Machine Learning Regressir pipeline gets by predicting the target from the features. R2 is between 0 and 1, the close to 1, the more precised if is the ML pipeline.
+    * Best features are the feature which explain in high percentage the database.
+	* R2 is the score a Machine Learning Regressor pipeline gets by predicting the target from the features. R2 is between 0 and 1, the close to 1, the more precised if is the ML pipeline.
 
 
 ## Business Requirements
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+We are requested by the client, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to help in maximising the sales price for the inherited properties.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+Although the client has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
 * 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
@@ -96,9 +96,8 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 * After data analysis, we agreed with stakeholders that the page will: 
 	* State business requirement 1
 	* Checkbox: data inspection (display the number of rows and columns in the data, and display the first ten rows of the data)
-	* Display the most correlated variables to Sale Price and the conclusions.
-	* Checkbox: Individual plots showing the correlation between Sale Price and the numerical variables. 
-	* Checkbox: Parallel plot showing the correlation between Sale Price and the categorical variables. 
+	* Display the most correlated features to Sale Price and the conclusions.
+	* Checkbox: Individual plots showing the correlation between Sale Price and its most correlated features.  
 
 ### Page 3: Predict Sale Price
 * State business requirement 2
