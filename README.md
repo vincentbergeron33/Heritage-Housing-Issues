@@ -70,10 +70,9 @@ Although the client has an excellent understanding of property prices in her own
 
 * **Business Requirement 2:** Regressor Machine Learning Model
 	* We want to predict the Sale Price.
-    * To predict Sale Price, we want to use a Regressor Machine learning Model or change the ML task to classification if the regressor model doesn't achiebe the minimum R2 score.
+    * To predict Sale Price, we want to use a Regressor Machine learning Model or change the ML task to classification if the regressor model doesn't achieve the minimum R2 score.
     * We want to achieve achieve a minimum R2 score of 0.75 on both Train and Test sets.
     * We want to understand the most important features.
-	* We want to predict the tenure level for a prospect that is expected to churn. We want to build a regression model or change the ML task to classification depending on the regressor performance.
 
 
 ## ML Business Case
@@ -117,7 +116,7 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 * 3 - We suspect that the Remodel date will have an important impact on the Sale Price. The latest is has been remodel or built, the higher should the Sale Price be.
     * Correct. The correlation study shows that the Remodel date is one of most correlated feature with the target Sale Price. The modeling and evalation shows that Remodel date is one of the best features to predict the Sale Price.
 
-### Page 5: Predict Churn
+### Page 5: Model Performance
 * Considerations and conclusions after the pipeline is trained
 * Present ML pipeline steps
 * Feature importance
