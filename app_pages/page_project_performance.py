@@ -7,6 +7,7 @@ from src.machine_learning.function_predict_saleprice import load_pkl_file
 from src.machine_learning.function_ml_performance import regression_performance, regression_evaluation
 def page_project_performance_body():
 
+# load data 
     version = "v1"
 
     best_pipeline = load_pkl_file(
@@ -33,10 +34,14 @@ def page_project_performance_body():
 
     st.divider()
 
+# show pipeline steps, use of st.code here for a better visualisation
+
     st.write("Only one ML Pileline is required as the target wasn't imbalance.")
     st.code(best_pipeline)
 
     st.divider()
+
+# Show best features
 
     st.write("The most important features constitute of 4 features. Unfortunately, with only those feature, "
              "we can not achieve a R2 of 0.75. As shown in the ML Pipeline a PCA is required to achieve a R2" 
@@ -46,6 +51,8 @@ def page_project_performance_body():
     st.image(best_features)
 
     st.divider()
+
+# show ML pipeline performance
 
     regression_performance(X_train, y_train, X_test, y_test,best_pipeline)
              

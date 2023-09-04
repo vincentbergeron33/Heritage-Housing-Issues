@@ -144,7 +144,19 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
+The following functions were taken from the Walkthrough project 02 in the Code Institute course:
+* FeatureEngineeringAnalysis
+* DisplayCorrAndPPS
+* EvaluateMissingData
+* HyperparameterOptimizationSearch
+* Features importance
+* regression_performance
+* regression_evaluation_plots
+* pca_components_analysis
+* Variables distribution (Categorical & Numerical)
+
+**When required, the functions above have been modified to fit the database.**
+
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
 ### Content 
