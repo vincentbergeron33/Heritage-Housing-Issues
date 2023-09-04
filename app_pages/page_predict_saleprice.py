@@ -3,12 +3,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+# To make it clean, we use a different files for all functions.
+# Therefore we import them in this file.
+
 from src.machine_learning.function_saleprice_study import load_filled_data
-from src.machine_learning.function_predict_saleprice import load_pkl_file, predict_saleprice
-# Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict the Sale Price.
-# "Run predictive analysis" button that serves the prospect data to our ML pipelines, and predicts the prospect Sale Price.
+from src.machine_learning.function_predict_saleprice import load_pkl_file, predict_saleprice, load_client_houses, predict_client_saleprice
+
+# Body that is shown in the app
 
 def page_predict_saleprice_body():
+
+# We load the data using function from function_predict_saleprice
+    df2 = load_client_houses()
 
     version = 'v1'
     saleprice_pipeline = load_pkl_file(
@@ -18,19 +24,39 @@ def page_predict_saleprice_body():
 
     st.info(
         "**Business Requirement 2:** Regressor Machine Learning Model \n"
-        "- We want to predict the Sale Price.\n"
-        "- To predict Sale Price, we want to use a Regressor Machine learning Model or change the ML task to "
-        "classification if the regressor model doesn't achieve the minimum R2 score. \n"
-        "- We want to achieve achieve a minimum R2 score of 0.75 on both Train and Test sets. \n"
-        "- We want to understand the most important features."
+        "- We want to predict the Sale Price and share the information with the client.\n"
+        "- To predict Sale Price, we use a Regressor with a minimum R2 score of 0.75. \n"
+        "- We predict the Sale Price of the 4 client's houses. \n"
+        "- We create a tool to predict any house which can be easily use by the client by entering the data manually."
     )
 
+    st.divider()
+# We show the database of the client house
+
+    if st.checkbox("Show client house data"):
+        st.write(df2.head(4))
+
+    st.divider()
+
+# Predict the Sale Price of the client's houses and return a statement, function is developed in function_predict_saleprice
+
+    if st.checkbox("Predicted Sale Price of the client's houses"):
+        predict_client_saleprice(df2, saleprice_pipeline)
+
+    st.divider()
+
+# We get the data from where we want to predict the Sale price from the input of function DrawImputWidgets
+
     X_live = DrawInputsWidgets()
+
+# We predict the Sale Price of the input using the function developed in function_predict_saleprice
 
     if st.button("Predict House Sale Price"):
         predict_saleprice(X_live, saleprice_pipeline)
 
 
+# The below function is taken from Walkthrough project 2 of the Code Institute course
+# It shows an input which is tailored for each feature.
 
 def DrawInputsWidgets():
 

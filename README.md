@@ -105,10 +105,7 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 
 ### Page 4: Project Hypothesis and Validation
 * Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
-* 1 - We suspect customers are churning with low tenure levels
-	* Correct. The correlation study at Churned Customer Study supports that.
-* 2 -  A customer survey showed our customers appreciate fibre Optic.
-	* A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
+
 * 1 - We suspect that the overall quality will have an important impact on the Sale Price. Better is the overall quality, the higher should the Sale Price be.
 	* Correct. The correlation study shows that Overall quality is one of most correlated feature with the target Sale Price. The modeling and evalation shows that Overall quality is the most important feature to predict the Sale Price.
 * 2 - We suspect that the overall condition will have an important impact on the Sale Price. Better is the overall condition, the higher should the Sale Price be.
