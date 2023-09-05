@@ -43,9 +43,9 @@ def page_project_performance_body():
 
 # Show best features
 
-    st.write("The most important features constitute of 4 features. Unfortunately, with only those feature, "
+    st.write("The most important features constitute of 4 features. Unfortunately, with only those features, "
              "we can not achieve a R2 of 0.75. As shown in the ML Pipeline a PCA is required to achieve a R2" 
-             "greater then 0.75, meaning we need to input all feature to get the required precision of the Sale Price.\n"
+             " greater then 0.75, meaning we need to input all feature to get the required precision of the Sale Price.\n"
              "\n However, those 4 features will have an important impact on the Sale Price and the client"
              "can upgrade those feature to improve the Sale Price of his houses.")
     st.image(best_features)

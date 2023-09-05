@@ -76,8 +76,6 @@ def page_saleprice_study_body():
 
 def saleprice_correlation_with_feature(df):
     target_var = "SalePrice"
-    print("entering the function")
-    print(df)
 
     for col in df.drop([target_var], axis=1).columns.to_list():
         plot_numerical(df, col, target_var)
