@@ -3,6 +3,8 @@
 
 **The goal of this project is to optimize the sales price precision of inherited properties which the client wants to sell.**
 
+* The App live link is: https://housing-issues-4fe02d35fceb.herokuapp.com/
+
 ## Dataset Content
 The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
@@ -142,16 +144,14 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The App live link is: https://housing-issues-4fe02d35fceb.herokuapp.com/ 
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+5. The deployment went really smootly and no bugs occured.
 
 ## Main Data Analysis and Machine Learning Libraries
 * numpy: Dealing with dataset
@@ -169,7 +169,6 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 * altair: Pipeline - Machine Learning
 * ydata-profiling: Profil of the features in the dataset during the feature study
 
-
 ## Credits 
 
 The following functions were taken from the Walkthrough project 02 in the Code Institute course:
@@ -184,15 +183,10 @@ The following functions were taken from the Walkthrough project 02 in the Code I
 * Variables distribution (Categorical & Numerical)
 
 **When required, the functions above have been modified to fit the database.**
-
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
-
+ 
 ### Media
 
 - The only media used are the screenshot you can see in this README
-
-
 
 ## Acknowledgements
 
