@@ -25,7 +25,7 @@ def page_project_performance_body():
     y_test = pd.read_csv(
         f"outputs/ml_pipeline/predict_SalePrice/{version}/y_test.csv").values
 
-    st.write("## Project Performance")
+    st.header("Project Performance")
 
     st.info(
         "The type of the ML pipeline is Regressor and as required in the Bussiness requirement #2, it havs a R2"
@@ -36,12 +36,16 @@ def page_project_performance_body():
 
 # show pipeline steps, use of st.code here for a better visualisation
 
+    st.subheader("Ml Pipeline")
+
     st.write("Only one ML Pileline is required as the target wasn't imbalance.")
     st.code(best_pipeline)
 
     st.divider()
 
 # Show best features
+
+    st.subheader("Best features")
 
     st.write("The most important features constitute of 4 features. Unfortunately, with only those features, "
              "we can not achieve a R2 of 0.75. As shown in the ML Pipeline a PCA is required to achieve a R2" 
@@ -53,6 +57,8 @@ def page_project_performance_body():
     st.divider()
 
 # show ML pipeline performance
+
+    st.subheader("ML Pipeline performance")
 
     regression_performance(X_train, y_train, X_test, y_test,best_pipeline)
              

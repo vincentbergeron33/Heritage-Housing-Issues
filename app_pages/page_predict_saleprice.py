@@ -20,10 +20,11 @@ def page_predict_saleprice_body():
     saleprice_pipeline = load_pkl_file(
         f"outputs/ml_pipeline/predict_SalePrice/{version}/clf_pipeline.pkl")
 
-    st.write("## Predict Sale Price")
+    st.header("Predict Sale Price")
+
+    st.subheader("Business Requirement 2")
 
     st.info(
-        "**Business Requirement 2:** Regressor Machine Learning Model \n"
         "- We want to predict the Sale Price and share the information with the client.\n"
         "- To predict Sale Price, we use a Regressor with a minimum R2 score of 0.75. \n"
         "- We predict the Sale Price of the 4 client's houses. \n"
@@ -33,12 +34,16 @@ def page_predict_saleprice_body():
     st.divider()
 # We show the database of the client house
 
+    st.subheader("Dataset of client's houses preview ")
+
     if st.checkbox("Show client house data"):
         st.write(df2.head(4))
 
     st.divider()
 
 # Predict the Sale Price of the client's houses and return a statement, function is developed in function_predict_saleprice
+
+    st.subheader("Predicted Sale Price for client's houses")
 
     if st.checkbox("Predicted Sale Price of the client's houses"):
         predict_client_saleprice(df2, saleprice_pipeline)
@@ -50,6 +55,8 @@ def page_predict_saleprice_body():
     X_live = DrawInputsWidgets()
 
 # We predict the Sale Price of the input using the function developed in function_predict_saleprice
+
+    st.subheader("Predict House Sale Price Tool")
 
     if st.button("Predict House Sale Price"):
         predict_saleprice(X_live, saleprice_pipeline)

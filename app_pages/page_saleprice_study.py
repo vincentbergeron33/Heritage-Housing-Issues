@@ -17,18 +17,21 @@ def page_saleprice_study_body():
     
     df1_eda = df1.filter(vars_to_study + ['SalePrice'])
 
-    st.write("## Sale Price Study")
+    st.header("Sale Price Study")
 
 # State business requirement 1
 
+    st.subheader("Business requirement 1")
     st.info(
-        "**Business requirement 1:** The client is interested in discovering how the house attributes correlate with the sale price. Therefore, "
+        "The client is interested in discovering how the house attributes correlate with the sale price. Therefore, "
         "the client expects data visualisations of the correlated variables against the sale price to show that. \n"
     )
 
 # Checkbox: data inspection (display the number of rows and columns in the data, and display the first ten rows of the data)
 
-    if st.checkbox("Inspect correlation of most important features"):
+    st.subheader("Dataset preview")
+
+    if st.checkbox("Inspect first rows of the dataset"):
         st.write(
             f"* The dataset has {df1.shape[0]} rows and {df1.shape[1]} columns, "
             f"find below the first 10 rows.")
@@ -38,6 +41,8 @@ def page_saleprice_study_body():
     st.divider()
 
 # Display the most correlated variables to Sale Price and the conclusions.
+
+    st.subheader("Most important features correlation")
 
     st.info(
         f"During the Sale Price correlation study the following features shown a strong correlation with Sale Price: \n"
@@ -64,12 +69,16 @@ def page_saleprice_study_body():
 
 # Checkbox: Individual plots showing the correlation between Sale Price and the numerical variables.
 
+    st.subheader("Correlation in graphics")
+
     if st.checkbox("Plot shown correlation between SalePrice and all Features with moderate to high correlation."):
         saleprice_correlation_with_feature(df1_eda)
 
     st.divider()
 
 # Checkbox: Parallel plot showing the correlation between Sale Price and the categorical variables.
+
+    st.subheader("Parralel plot for categorical features")
 
     if st.checkbox("Parralel plot with categorical features"):
         parallel_plot_categorical(df_parallel)

@@ -90,18 +90,25 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 	* Describe Project Dataset
 	* State Business Requirements
 
+![Project summary](src/screenshot/project_summary.png)
+
 ### Page 2: Sale Price Study
 * Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
 * After data analysis, we agreed with stakeholders that the page will: 
 	* State business requirement 1
 	* Checkbox: data inspection (display the number of rows and columns in the data, and display the first ten rows of the data)
 	* Display the most correlated features to Sale Price and the conclusions.
-	* Checkbox: Individual plots showing the correlation between Sale Price and its most correlated features.  
+	* Checkbox: Individual plots showing the correlation between Sale Price and its most correlated features.
+
+![Sale price Study](src/screenshot/sale_price_study.png)
+![Sale price Study2](src/screenshot/sale_price_study2.png)
 
 ### Page 3: Predict Sale Price
 * State business requirement 2
 * Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict the Sale Price.
 * "Run predictive analysis" button that serves the prospect data to our ML pipelines, and predicts the prospect Sale Price.
+
+![Predict Sale Price](src/screenshot/sale_price_prediction.png)
 
 ### Page 4: Project Hypothesis and Validation
 * Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
@@ -113,16 +120,24 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 * 3 - We suspect that the Remodel date will have an important impact on the Sale Price. The latest is has been remodel or built, the higher should the Sale Price be.
     * Correct. The correlation study shows that the Remodel date is one of most correlated feature with the target Sale Price. The modeling and evalation shows that Remodel date is one of the best features to predict the Sale Price.
 
+![Hypothesis](src/screenshot/hypothesis.png)
+
 ### Page 5: Model Performance
 * Considerations and conclusions after the pipeline is trained
 * Present ML pipeline steps
 * Feature importance
 * Pipeline performance
 
+![Model Performance](src/screenshot/performance1.png)
+![Model Performance 2](src/screenshot/performance2.png)
 
+## fixed Bugs
+* Since the code institute course was prepared years ago, they were using pandas-profiling to get the report on the features of the dataset. After some research, ydata-profiling is now used with the recent libraries.
+
+* The code in general required to be updated as I have used all the most updated version of the libraries. 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* As required when starting the project Heritage Housing issues, I have forked the template from the code institute github. After cloning it into a new repositery, we still can see the commits from the code institute team of when they were updating the template.
 
 ## Deployment
 ### Heroku
@@ -139,7 +154,20 @@ The training data to fit the model comes from Kaggle. The dataset has almost 1.5
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* numpy: Dealing with dataset
+* pandas: dealing with dataset
+* matplotlib: plots
+* seaborn: plots
+* plotly: plots
+* ppscore: PPS score
+* streamlit: Dashboard
+* feature-engine: Feature engineering steps
+* imbalanced-learn: Confirm if Target is unbalanced
+* scikit-learn: Machine Learning
+* xgboost: Pipeline - Machine Learning
+* yellowbrick: Pipeline visualisation
+* altair: Pipeline - Machine Learning
+* ydata-profiling: Profil of the features in the dataset during the feature study
 
 
 ## Credits 
@@ -159,19 +187,14 @@ The following functions were taken from the Walkthrough project 02 in the Code I
 
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
+- The only media used are the screenshot you can see in this README
 
 
 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements
+
+* Thanks to my mentor Rohit Sharma for answering my questions and reviewing my project.
 

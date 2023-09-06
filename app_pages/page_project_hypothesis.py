@@ -5,7 +5,7 @@ import plotly.express as px
 
 
 def page_project_hypothesis_body():
-    st.write("## Project Hypothesis")
+    st.header("Project Hypothesis")
 
     st.success(
         "1. We suspect that the overall quality will have an important impact on the Sale Price."
